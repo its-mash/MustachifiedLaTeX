@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Curriculum Vitae}
+\author{<<name>>}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Contact Information}
+\begin{itemize}
+    \item Name: << contact.name >>  % Accessing name
+    \item Email: << contact.email >>  % Accessing email
+    \item Phone: << contact.phone >>   % Accessing phone
+\end{itemize}
+
+\section*{Summary}
+\input{resume/summary.tex}
+
+\section*{Experience}
+<<#experience>>
+\subsection*{<<jobTitle>> at <<company>>}
+\textit{(<<startDate>> -- <<endDate>>)}\\
+<<description>>
+<</experience>>
+
+\section*{Education}
+<<#education>>
+\subsection*{<<degree>> in <<field>>}
+\textit{(<<institution>>, <<year>>)}\\
+<</education>>
+
+\end{document}

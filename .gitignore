@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+
+# pnpm lock file
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+output/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+tmp/
+temp/

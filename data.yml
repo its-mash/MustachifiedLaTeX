@@ -1,0 +1,22 @@
+name: John Doe
+contact:
+  name: Johnxx Doe
+  email: john.doe@example.com
+  phone: '+1234567890'
+summaryText: "A highly motivated software engineer with over 5 years of experience in building scalable applications."
+experience:
+  - jobTitle: Senior Software Engineer
+    company: Tech Solutions Inc.
+    startDate: January 2020
+    endDate: Present
+    description: "Lead a team of developers to create innovative software solutions."
+  - jobTitle: Software Engineer
+    company: Web Development Co.
+    startDate: June 2017
+    endDate: December 2019
+    description: "Worked on various web applications and improved their performance."
+education:
+  - degree: Bachelor's
+    field: Computer Science
+    institution: University of Technology
+    year: 2017
