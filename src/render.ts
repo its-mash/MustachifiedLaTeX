@@ -41,13 +41,16 @@ function renderTemplate(templatePath: string, data: any): string {
 
 // Command-line argument parsing using yargs
 const argv = yargs(hideBin(process.argv))
-    .usage('Usage: $0 <data.yaml> <main.tex>')
+    .usage('Usage: $0 <data.yaml> <main.tex> [output.tex]')
     .demandCommand(2)
     .argv as { _: string[] }; // Assert the type of argv;
 
 // Ensure argv._ is correctly inferred
-const dataFilePath = argv._[0] as string;
-const mainTemplatePath = argv._[1] as string;
+const dataFilePath = argv._[0] as string;         // YAML data file path
+const mainTemplatePath = argv._[1] as string;     // Main LaTeX template file path
+const outputFilePath = argv._[2]                  // Optional output file path
+    ? path.resolve(argv._[2])                     // Resolve if specified
+    : path.join(path.dirname(mainTemplatePath), 'output.tex');  // Default to output.tex in the template directory
 
 // Load data (YAML format)
 let data: any;
@@ -63,7 +66,6 @@ try {
 const output = renderTemplate(mainTemplatePath, data);
 
 // Save the processed LaTeX file
-const outputFilePath = path.join(path.dirname(mainTemplatePath), 'output.tex');
 fs.writeFileSync(outputFilePath, output);
 
 console.log(`LaTeX document generated: ${outputFilePath}`);
