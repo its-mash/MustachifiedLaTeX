@@ -1,22 +1,53 @@
-name: John Doe
+name:
+  en: John Doe
+  de: Hans Müller
 contact:
-  name: Johnxx Doe
   email: john.doe@example.com
   phone: '+1234567890'
-summaryText: "A highly motivated software engineer with over 5 years of experience in building scalable applications."
+summaryText:
+  en: "A highly motivated software engineer with over 5 years of experience."
+  de: "Ein hochmotivierter Softwareingenieur mit über 5 Jahren Erfahrung."
 experience:
-  - jobTitle: Senior Software Engineer
-    company: Tech Solutions Inc.
+  - jobTitle:
+      en: Senior Software Engineer
+      de: Leitender Softwareingenieur
+    company:
+      en: Tech Solutions Inc.
+      de: Tech-Lösungen GmbH
     startDate: January 2020
     endDate: Present
-    description: "Lead a team of developers to create innovative software solutions."
-  - jobTitle: Software Engineer
-    company: Web Development Co.
+    description:
+      en: "Lead a team of developers to create innovative software solutions."
+      de: "Leitete ein Team von Entwicklern zur Schaffung innovativer Softwarelösungen."
+  - jobTitle:
+      en: Software Engineer
+      de: Software-Ingenieur
+    company:
+      en: Web Development Co.
+      de: Webentwicklungs GmbH
     startDate: June 2017
     endDate: December 2019
-    description: "Worked on various web applications and improved their performance."
+    description:
+      en: "Worked on various web applications and improved their performance."
+      de: "Arbeitete an verschiedenen Webanwendungen und verbesserte deren Leistung."
 education:
-  - degree: Bachelor's
-    field: Computer Science
-    institution: University of Technology
-    year: 2017
+  - degree:
+      en: Bachelor's
+      de: Bachelor
+    field:
+      en: Computer Science
+      de: Informatik
+    institution:
+      en: University of Technology
+      de: Technische Universität
+    year: 2018
+  - degree:
+      en: Master's
+      de: Master
+    field:
+      en: Software Engineering
+      de: Software-Engineering
+    institution:
+      en: University of Excellence
+      de: Universität der Exzellenz
+    year: 2020

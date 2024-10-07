@@ -9,13 +9,28 @@
             "settings": {
                 "latex-workshop.latex.tools": [
                     {
-                        "name": "Render with Mustache",
+                        "name": "LaTeXMoustache - EN",
                         "command": "pnpm",
                         "args": [
                             "start",  // Path to the render.js script in the root folder
                             "%WORKSPACE_FOLDER%/data.yml", // Path to the data.yml file in the root folder
                             "%DOC_EXT%",
-                            "%OUTDIR%/%DOCFILE%.tex" // Output file is named based on the active file's name
+                            "-o %OUTDIR%/%DOCFILE%.tex", // Output file is named based on the active file's name
+                            "-l en"
+                        ],
+                        "env": {
+                            "PNPM_HOME": "/root/.local/share/pnpm" // Optional if you need PNPM in the environment
+                        }
+                    },
+                    {
+                        "name": "LaTeXMoustache - DE",
+                        "command": "pnpm",
+                        "args": [
+                            "start",  // Path to the render.js script in the root folder
+                            "%WORKSPACE_FOLDER%/data.yml", // Path to the data.yml file in the root folder
+                            "%DOC_EXT%",
+                            "-o %OUTDIR%/%DOCFILE%.tex", // Output file is named based on the active file's name
+                            "-l de"
                         ],
                         "env": {
                             "PNPM_HOME": "/root/.local/share/pnpm" // Optional if you need PNPM in the environment
@@ -28,6 +43,7 @@
                             "-xelatex",
                             "-pdf",
                             "-interaction=nonstopmode",
+                            "-file-line-error",
                             "-synctex=1",
                             "-outdir=%OUTDIR%",                // Output directory configured in latex-workshop settings
                             "%OUTDIR%/%DOCFILE%.tex"       // The output file from the previous recipe
@@ -39,15 +55,22 @@
                 ],
                 "latex-workshop.latex.recipes": [
                     {
-                        "name": "Render with Mustache",
+                        "name": "LaTeXMoustache - EN",
                         "tools": [
-                            "Render with Mustache", 
+                            "LaTeXMoustache - EN", 
+                            "xelatexmk"
+                         ]
+                    },
+                    {
+                        "name": "LaTeXMoustache - DE",
+                        "tools": [
+                            "LaTeXMoustache - DE",
                             "xelatexmk"
                          ]
                     }
                 ],
-                "latex-workshop.latex.recipe.default": "Render with Mustache",
-                "latex-workshop.latex.autoBuild.run": "onFileChange",
+                "latex-workshop.latex.recipe.default": "LaTeXMoustache - DE",
+                "latex-workshop.latex.autoBuild.run": "onSave",
                 "latex-workshop.view.pdf.viewer": "tab",
                 "latex-workshop.latex.outDir": "%DIR%/output"
             },
